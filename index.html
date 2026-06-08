@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="Personal website for hms000409 with profile, CV, and contact links."
+      content="Personal website for Minseo Han with profile, CV, and contact links."
     >
-    <title>hms000409 | Personal Website</title>
+    <title>Minseo Han | Personal Website</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -15,91 +15,189 @@
 
     <header class="site-header">
       <nav class="nav" aria-label="Main navigation">
-        <a class="brand" href="#home" aria-label="hms000409 home">hms000409</a>
-        <ul class="nav-links">
+        <a class="brand" href="#home" aria-label="Minseo Han home">
+          <span class="brand-mark" aria-hidden="true">MH</span>
+          <span>Minseo Han</span>
+        </a>
+
+        <ul class="nav-links desktop-links">
           <li><a href="#about">About</a></li>
           <li><a href="#cv">CV</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+
+        <div class="nav-actions">
+          <a class="nav-link" href="https://github.com/hms000409">GitHub</a>
+          <a class="button button-primary nav-cta" href="assets/cv.pdf">Resume</a>
+        </div>
+
+        <details class="mobile-menu">
+          <summary aria-label="Open navigation menu">
+            <span class="menu-icon" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <span>Menu</span>
+          </summary>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#cv">CV</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://github.com/hms000409">GitHub</a></li>
+            <li><a href="assets/cv.pdf">Resume</a></li>
+          </ul>
+        </details>
       </nav>
     </header>
 
     <main id="main">
       <section class="hero" id="home" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">Personal Website</p>
+          <p class="badge-pill">Personal Website</p>
           <h1 id="hero-title">Hi, I am Minseo Han.</h1>
           <p class="lede">
-            This is a simple home for my profile, curriculum vitae, and public
-            contact links.
+            A compact static profile for background, curriculum vitae, and
+            public contact links.
           </p>
           <div class="actions" aria-label="Primary links">
-            <a class="button button-primary" href="#cv">View CV</a>
-            <a class="button button-secondary" href="#contact">Get in touch</a>
+            <a class="button button-primary" href="assets/cv.pdf">Open CV</a>
+            <a class="button button-secondary" href="#contact">Contact</a>
           </div>
         </div>
 
-        <figure class="profile">
-          <img
-            src="assets/profile.jpg"
-            alt="Profile portrait of hms000409"
-            width="640"
-            height="640"
-          >
-          <figcaption>hms000409</figcaption>
-        </figure>
+        <div class="terminal-mockup" aria-label="Profile summary terminal mockup">
+          <article class="terminal-pane profile-pane">
+            <div class="pane-top">
+              <span class="window-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span>profile.jpg</span>
+            </div>
+            <img
+              src="assets/profile.jpg"
+              alt="Profile portrait of Minseo Han"
+              width="640"
+              height="640"
+            >
+          </article>
+
+          <article class="terminal-pane">
+            <div class="pane-top">
+              <span class="window-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span>profile.js</span>
+            </div>
+            <pre><code>const profile = {
+  name: "Minseo Han",
+  site: "hms000409.github.io",
+  sections: ["about", "cv", "contact"]
+};</code></pre>
+          </article>
+
+          <article class="terminal-pane">
+            <div class="pane-top">
+              <span class="window-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span>cv.pdf</span>
+            </div>
+            <p class="status-line">
+              <span class="status-dot" aria-hidden="true"></span>
+              Resume file available
+            </p>
+            <a class="terminal-link" href="assets/cv.pdf">Open assets/cv.pdf</a>
+          </article>
+
+          <article class="terminal-pane">
+            <div class="pane-top">
+              <span class="window-dots" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span>contact.sh</span>
+            </div>
+            <pre><code>$ open github
+github.com/hms000409
+
+$ open contact
+available via public links</code></pre>
+          </article>
+        </div>
       </section>
 
-      <section class="section" id="about" aria-labelledby="about-title">
+      <section class="section" aria-labelledby="overview-title">
         <div class="section-heading">
-          <p class="eyebrow">About</p>
-          <h2 id="about-title">A concise personal profile.</h2>
+          <p class="badge-pill">Overview</p>
+          <h2 id="overview-title">Profile, CV, and contact in one place.</h2>
         </div>
-        <div class="section-body">
-          <p>
-            I use this page to share my background, current work, and ways to
-            connect. The site is intentionally lightweight, readable, and easy
-            to maintain as a static GitHub Pages website.
-          </p>
+
+        <div class="feature-grid">
+          <article class="feature-card" id="about">
+            <p class="card-kicker">About</p>
+            <h3>A concise personal profile.</h3>
+            <p>
+              I use this site to share my background, current work, and public
+              links in a lightweight GitHub Pages format.
+            </p>
+          </article>
+
+          <article class="feature-card" id="cv">
+            <p class="card-kicker">CV</p>
+            <h3>Curriculum vitae and resume.</h3>
+            <p>
+              Download the CV PDF for education, experience, projects, and
+              other background details.
+            </p>
+            <a class="tertiary-link" href="assets/cv.pdf">Open CV PDF</a>
+          </article>
+
+          <article class="feature-card" id="contact">
+            <p class="card-kicker">Contact</p>
+            <h3>Find me online.</h3>
+            <ul class="contact-list">
+              <li>
+                <span>GitHub</span>
+                <a href="https://github.com/hms000409">github.com/hms000409</a>
+              </li>
+              <li>
+                <span>CV</span>
+                <a href="assets/cv.pdf">assets/cv.pdf</a>
+              </li>
+            </ul>
+          </article>
         </div>
       </section>
 
-      <section class="section highlight" id="cv" aria-labelledby="cv-title">
-        <div class="section-heading">
-          <p class="eyebrow">CV</p>
-          <h2 id="cv-title">Curriculum vitae and resume.</h2>
-        </div>
-        <div class="section-body">
-          <p>
-            Download the latest CV as a PDF for education, experience,
-            publications, projects, and other background details.
-          </p>
-          <a class="text-link" href="assets/cv.pdf">Open CV PDF</a>
-        </div>
-      </section>
-
-      <section class="section" id="contact" aria-labelledby="contact-title">
-        <div class="section-heading">
-          <p class="eyebrow">Contact</p>
-          <h2 id="contact-title">Find me online.</h2>
-        </div>
-        <div class="section-body">
-          <ul class="contact-list">
-            <li>
-              <span>GitHub</span>
-              <a href="https://github.com/hms000409">github.com/hms000409</a>
-            </li>
-            <li>
-              <span>CV</span>
-              <a href="assets/cv.pdf">assets/cv.pdf</a>
-            </li>
-          </ul>
-        </div>
+      <section class="cta-band" aria-labelledby="cta-title">
+        <p class="badge-pill">Resume</p>
+        <h2 id="cta-title">Open the latest CV.</h2>
+        <a class="button button-primary" href="assets/cv.pdf">Download CV</a>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>&copy; 2026 hms000409. Built with static HTML and CSS.</p>
+      <div>
+        <a class="brand footer-brand" href="#home" aria-label="Minseo Han home">
+          <span class="brand-mark" aria-hidden="true">MH</span>
+          <span>Minseo Han</span>
+        </a>
+        <p>&copy; 2026 hms000409.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="#about">About</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+        <a href="https://github.com/hms000409">GitHub</a>
+      </nav>
     </footer>
   </body>
 </html>
