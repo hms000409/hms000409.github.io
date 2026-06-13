@@ -557,6 +557,107 @@ code {
   overflow-wrap: anywhere;
 }
 
+.project-list {
+  display: grid;
+  gap: 24px;
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: 24px;
+  align-items: stretch;
+  border: 1px solid var(--color-hairline);
+  border-radius: 8px;
+  background: var(--color-surface-card);
+  padding: 28px;
+}
+
+.project-copy {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
+.project-copy p {
+  color: var(--color-body);
+}
+
+.code-sample {
+  margin: 0;
+  overflow-x: auto;
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: 8px;
+  background: var(--color-canvas-deep);
+  padding: 18px;
+  color: var(--color-ink);
+  font-family: var(--font-code);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.code-sample code {
+  font-family: inherit;
+}
+
+.academic-plan-body {
+  display: grid;
+  gap: 24px;
+  max-width: 760px;
+  color: var(--color-body);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.academic-course-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.academic-course-list li {
+  border: 1px solid var(--color-hairline);
+  border-radius: 8px;
+  background: var(--color-surface-card);
+  padding: 14px 16px;
+  color: var(--color-ink);
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.academic-interest,
+.academic-research {
+  display: grid;
+  gap: 8px;
+  border-left: 2px solid var(--color-primary);
+  padding-left: 18px;
+}
+
+.academic-interest span,
+.academic-research span {
+  color: var(--color-muted);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.academic-interest p {
+  margin: 0;
+  color: var(--color-ink);
+}
+
+.academic-research-list {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--color-ink);
+}
+
 .cta-band {
   position: relative;
   display: grid;
@@ -589,6 +690,31 @@ code {
 
 .cta-band .badge-pill {
   margin: 0;
+}
+
+.ai-usage {
+  display: grid;
+  gap: 10px;
+  border-top: 1px solid var(--color-hairline);
+  padding: 32px 0 0;
+  color: var(--color-body);
+}
+
+.ai-usage h2 {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.ai-usage p {
+  max-width: 760px;
+  margin: 0;
+  color: var(--color-body);
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .site-footer {
@@ -640,6 +766,10 @@ code {
 
   .feature-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
   }
 }
 

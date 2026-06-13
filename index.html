@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="Personal website for Minseo Han with profile, CV, and contact links."
+      content="Personal website for Minseo Han with profile, CV, projects, academic plan, and contact links."
     >
     <title>Minseo Han | Personal Website</title>
     <link rel="stylesheet" href="styles.css">
@@ -22,7 +22,9 @@
 
         <ul class="nav-links desktop-links">
           <li><a href="#about">About</a></li>
-          <li><a href="#cv">CV</a></li>
+          <li><a href="#latest-cv">CV</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#academic-plan">Academic Plan</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
 
@@ -42,7 +44,9 @@
           </summary>
           <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#cv">CV</a></li>
+            <li><a href="#latest-cv">CV</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#academic-plan">Academic Plan</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="https://github.com/hms000409">GitHub</a></li>
             <li><a href="assets/cv.pdf">Resume</a></li>
@@ -57,8 +61,8 @@
           <p class="badge-pill">Personal Website</p>
           <h1 id="hero-title">Hi, I am Minseo Han.</h1>
           <p class="lede">
-            A compact static profile for background, curriculum vitae, and
-            public contact links.
+            A compact static profile for background, curriculum vitae,
+            projects, academic plans, and public contact links.
           </p>
           <div class="actions" aria-label="Primary links">
             <a class="button button-primary" href="assets/cv.pdf">Open CV</a>
@@ -96,7 +100,7 @@
             <pre><code>const profile = {
   name: "Minseo Han",
   site: "hms000409.github.io",
-  sections: ["about", "cv", "contact"]
+  sections: ["about", "cv", "projects", "academic-plan", "contact"]
 };</code></pre>
           </article>
 
@@ -145,8 +149,9 @@ available via public links</code></pre>
             <p class="card-kicker">About</p>
             <h3>Looking to make a meaningful impact.</h3>
             <p>
-              I use this site to share my background, current work, and public
-              links in a lightweight GitHub Pages format.
+              I am a Computer Science &amp; Engineering student at Seoul
+              National University, interested in building thoughtful technology
+              through AI, algorithms, and interdisciplinary research.
             </p>
           </article>
 
@@ -181,10 +186,169 @@ available via public links</code></pre>
         </div>
       </section>
 
-      <section class="cta-band" aria-labelledby="cta-title">
+      <section class="section projects-section" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <p class="badge-pill">Projects</p>
+          <h2 id="projects-title">Projects</h2>
+        </div>
+
+        <div class="project-list">
+          <article class="project-card">
+            <div class="project-copy">
+              <p class="card-kicker">Java</p>
+              <h3>Diary</h3>
+              <p>
+                A command-line diary app for creating, listing, reading,
+                deleting, and searching entries through a keyword index.
+              </p>
+              <a class="tertiary-link" href="projects/Diary/Diary.java">View Diary.java</a>
+            </div>
+            <pre class="code-sample"><code>Set&lt;Integer&gt; idSet = searchMap.get(keyword);
+if(idSet==null || idSet.size()==0){
+    DiaryUI.print("There is no entry that contains \""+keyword+"\".");
+}else{
+    Iterator&lt;Integer&gt; iterator = idSet.iterator();
+    DiaryEntry entry = findEntry(iterator.next());
+    DiaryUI.print(entry.getFullString());
+}</code></pre>
+          </article>
+
+          <article class="project-card">
+            <div class="project-copy">
+              <p class="card-kicker">Java</p>
+              <h3>MusicApp</h3>
+              <p>
+                A music library and recommendation manager with song types,
+                user ratings, search history, and top-three recommendations.
+              </p>
+              <a class="tertiary-link" href="projects/MusicApp/MusicApp.java">View MusicApp.java</a>
+            </div>
+            <pre class="code-sample"><code>int cmp = user.getSearchCount(b.getTitle()) - user.getSearchCount(a.getTitle());
+if(cmp != 0) return cmp;
+
+cmp = Double.compare(b.getMedianRating(), a.getMedianRating());
+if(cmp!=0) return cmp;
+
+return a.getTitle().compareTo(b.getTitle());</code></pre>
+          </article>
+
+          <article class="project-card">
+            <div class="project-copy">
+              <p class="card-kicker">Java</p>
+              <h3>Post</h3>
+              <p>
+                A small posting system with authentication, file-backed posts,
+                friend recommendations, and ranked keyword search.
+              </p>
+              <a class="tertiary-link" href="projects/Post/FrontEnd.java">View FrontEnd.java</a>
+            </div>
+            <pre class="code-sample"><code>for(Post post :allPosts){
+    if(backend.keywordsCount(post, keywordArray)==0)continue;
+    searched.add(post);
+    keywordsCount.put(post, backend.keywordsCount(post,keywordArray));
+    contentCount.put(post, backend.contentWords(post));
+}
+
+searched.sort((a, b)-&gt;{
+    int cmp = keywordsCount.get(b) - keywordsCount.get(a);
+    if(cmp!=0)return cmp;
+    return contentCount.get(b) - contentCount.get(a);
+});</code></pre>
+          </article>
+
+          <article class="project-card">
+            <div class="project-copy">
+              <p class="card-kicker">C++</p>
+              <h3>Monster Battle</h3>
+              <p>
+                A turn-based battle simulator using polymorphic monster
+                classes, type-specific critical attacks, and overloaded combat logic.
+              </p>
+              <a class="tertiary-link" href="projects/monster/monster.cpp">View monster.cpp</a>
+            </div>
+            <pre class="code-sample"><code>void Monster::attack(Monster *attacked_monster) const {
+    if (attacked_monster-&gt;get_type() == critical_to) {
+        critical_attack(attacked_monster);
+    } else {
+        attacked_monster-&gt;decrease_health(damage);
+    }
+}
+
+void FireMon::critical_attack(Monster *attacked_monster) const {
+    attacked_monster-&gt;decrease_health(attacked_monster-&gt;get_hp() / 2);
+}</code></pre>
+          </article>
+
+          <article class="project-card">
+            <div class="project-copy">
+              <p class="card-kicker">C</p>
+              <h3>Simple Pacman</h3>
+              <p>
+                A Pacman-style game built around Sokol graphics, tile maps,
+                ghost movement, power-ups, high scores, and level timing.
+              </p>
+              <a class="tertiary-link" href="projects/simplepacman/pacman.c">View pacman.c</a>
+            </div>
+            <pre class="code-sample"><code>if (player.pos.x == current_ghost-&gt;pos.x&amp;&amp;player.pos.y==current_ghost-&gt;pos.y) {
+    if (current_ghost-&gt;scared==1) {
+        player.score += 200;
+        current_ghost-&gt;returning=1;
+        current_ghost-&gt;scared = 0;
+    }else {
+        game_state=STATE_DYING;
+    }
+}</code></pre>
+          </article>
+        </div>
+      </section>
+
+      <section class="section academic-plan" id="academic-plan" aria-labelledby="academic-plan-title">
+        <div class="section-heading">
+          <p class="badge-pill">Academic Plan</p>
+          <h2 id="academic-plan-title">Building a focused academic path.</h2>
+        </div>
+
+        <div class="academic-plan-body">
+          <p>
+            I am shaping my studies around meaningful projects, steady growth,
+            and work that can create a positive impact.
+          </p>
+          <ul class="academic-course-list">
+            <li>Engineering Mathematics 2</li>
+            <li>Computer Structure</li>
+            <li>Algorithms</li>
+            <li>Computer Vision</li>
+            <li>Machine Learning</li>
+          </ul>
+          <div class="academic-interest">
+            <span>Personal academic interest</span>
+            <p>Studying quantum physics and quantum computing.</p>
+          </div>
+          <div class="academic-research">
+            <span>Research interests</span>
+            <ul class="academic-research-list">
+              <li>Modeling and improving human recognition processes</li>
+              <li>Improving AI algorithms</li>
+              <li>Fusing AI with other domains</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-band" id="latest-cv" aria-labelledby="cta-title">
         <p class="badge-pill">Resume</p>
         <h2 id="cta-title">Open the latest CV.</h2>
         <a class="button button-primary" href="assets/cv.pdf">Download CV</a>
+      </section>
+
+      <section class="ai-usage" aria-labelledby="ai-usage-title">
+        <h2 id="ai-usage-title">AI usage</h2>
+        <p>
+          AI assisted with organizing the website structure, drafting and
+          refining text, and shaping the HTML/CSS implementation. Final content,
+          project details, and design choices were reviewed and directed by
+          Minseo Han.
+        </p>
       </section>
     </main>
 
@@ -199,6 +363,8 @@ available via public links</code></pre>
       <nav aria-label="Footer navigation">
         <a href="#about">About</a>
         <a href="#cv">CV</a>
+        <a href="#projects">Projects</a>
+        <a href="#academic-plan">Academic Plan</a>
         <a href="#contact">Contact</a>
         <a href="https://github.com/hms000409">GitHub</a>
       </nav>
